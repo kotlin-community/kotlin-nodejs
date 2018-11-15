@@ -1,0 +1,6 @@
+
+applyKotlinToJS()
+
+dependencies {
+    compile 'org.jetbrains.kotlinx:kotlinx-coroutines-core-js:1.0.0'
+}

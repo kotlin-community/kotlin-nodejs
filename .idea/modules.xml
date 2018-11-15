@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fs.iml" filepath="$PROJECT_DIR$/.idea/modules/fs.iml" group="packages/fs" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/packages/fs/fs_main.iml" filepath="$PROJECT_DIR$/.idea/modules/packages/fs/fs_main.iml" group="packages/fs" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/packages/fs/fs_test.iml" filepath="$PROJECT_DIR$/.idea/modules/packages/fs/fs_test.iml" group="packages/fs" />
       <module fileurl="file://$PROJECT_DIR$/kotlin-nodejs.iml" filepath="$PROJECT_DIR$/kotlin-nodejs.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kotlin-nodejs_main.iml" filepath="$PROJECT_DIR$/.idea/modules/kotlin-nodejs_main.iml" group="kotlin-nodejs" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kotlin-nodejs_test.iml" filepath="$PROJECT_DIR$/.idea/modules/kotlin-nodejs_test.iml" group="kotlin-nodejs" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nodejs-path/nodejs-path_main.iml" filepath="$PROJECT_DIR$/.idea/modules/nodejs-path/nodejs-path_main.iml" group="nodejs-path" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nodejs-path/nodejs-path_test.iml" filepath="$PROJECT_DIR$/.idea/modules/nodejs-path/nodejs-path_test.iml" group="nodejs-path" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/packages/packages.iml" filepath="$PROJECT_DIR$/.idea/modules/packages/packages.iml" group="packages" />
     </modules>
   </component>
 </project>

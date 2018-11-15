@@ -2,8 +2,13 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="fs_main" target="1.8" />
+      <module name="fs_test" target="1.8" />
+      <module name="kotlin-nodejs-nodejs-path_test" target="1.8" />
       <module name="kotlin-nodejs_main" target="1.8" />
       <module name="kotlin-nodejs_test" target="1.8" />
+      <module name="nodejs-path_main" target="1.8" />
+      <module name="nodejs-path_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
