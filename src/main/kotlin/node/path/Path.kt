@@ -1,84 +1,107 @@
-package Node.Path
+package node.path
 
-import Node.Path.Internal.FormatInputPathObject
-import Node.Path.Internal.delimiter as _delimiter
-import Node.Path.Internal.sep as _sep
-import Node.Path.Internal.isAbsolute as _isAbsolute
-import Node.Path.Internal.dirname as _dirname
-import Node.Path.Internal.basename as _basename
-import Node.Path.Internal.extname as _extname
-import Node.Path.Internal.join as _join
-import Node.Path.Internal.normalize as _normalize
-import Node.Path.Internal.resolve as _resolve
-import Node.Path.Internal.relative as _relative
-import Node.Path.Internal.parse as _parse
-import Node.Path.Internal.format as _format
+import node.path.delimiter as _delimiter
+import node.path.sep as _sep
+import node.path.isAbsolute as _isAbsolute
+import node.path.dirname as _dirname
+import node.path.basename as _basename
+import node.path.extname as _extname
+import node.path.join as _join
+import node.path.normalize as _normalize
+import node.path.resolve as _resolve
+import node.path.relative as _relative
+import node.path.parse as _parse
+import node.path.format as _format
 
-// TODO: add ability to destructure the path
 class Path(value: String = "") {
+    enum class Bias {
+        Start,
+        End,
+        All
+    }
+
     companion object {
         val separator: String
             get() = _sep
+
         val delimiter: String
             get() = _delimiter
+
+        fun join(vararg segments: Array<out String>): Path {} // TODO: implmement
+
+        fun join(vararg segments: Array<out Path>): Path {} // TODO: implmement
+
+        fun resolve(vararg segments: Array<out String>): Path {} // TODO: implmement
+
+        fun resolve(vararg segments: Array<out Path>): Path {} // TODO: implmement
+
+        fun relative(from: String, to: String): Path {} // TODO: implmement
+
+        fun relative(from: Path, to: Path): Path {} // TODO: implmement
     }
 
-    private var value: String = _normalize(value)
-
-    val directory: String
-        get() = _dirname(this.value)
-    val filename: String
-        get() = _basename(this.value)
-    val extension: String
-        get() = _extname(this.value)
-    val isAbsolute: Boolean
-        get() = _isAbsolute(this.value)
+    var directory: String = "" // TODO: implmement
+    var filename: String = "" // TODO: implmement
+    var extension: String = "" // TODO: implmement
+    var isAbsolute: Boolean = false // TODO: implmement
 
     constructor(vararg segments: String): this() {
-        this.value = _normalize(_join(*segments))
+        // TODO: implmement
     }
 
-    constructor(parsedPath: ParsedPath): this() {
-        this.value = _format(object : FormatInputPathObject {
-            override var root = parsedPath.root as String?
-            override var dir = parsedPath.directory as String?
-            override var base = parsedPath.filename as String?
-            override var ext = parsedPath.extension as String?
-            override var name = parsedPath.name as String?
-        })
+    constructor(path: Path): this() {
+        // TODO: implmement
     }
 
-    fun join(vararg segments: String): Path {
-        this.value = _normalize(_join(this.value, *segments))
+    fun append(vararg segments: Array<out String>): Path {
+        // TODO: implmement
         return this
     }
 
-    fun resolve(vararg segments: String = emptyArray()): Path {
-        this.join(*segments)
-        this.value = _resolve(this.value)
+    fun append(vararg segments: Array<out Path>): Path {
+        // TODO: implmement
         return this
     }
+
+    fun prepend(vararg segments: Array<out String>): Path {
+        // TODO: implmement
+        return this
+    }
+
+    fun prepend(vararg segments: Array<out Path>): Path {
+        // TODO: implmement
+        return this
+    }
+
+    fun remove(target: String, bias: Path.Bias): Path {
+        // TODO: implmement
+    }
+
+    fun remove(target: Path, bias: Path.Bias): Path {
+        // TODO: implmement
+    }
+
+    fun toAbsolute(): Path {
+        // TODO: implmement
+        return this
+    }
+
+    fun relativeTo(target: String): Path {
+        // TODO: implmement
+        return Path()
+    }
+
 
     fun relativeTo(target: Path): Path {
-        return Path(_relative(this.value, target.value))
-    }
-
-    fun parse(): ParsedPath {
-        val parsedPath = _parse(this.value)
-        return ParsedPath(
-                root = parsedPath.root,
-                directory = parsedPath.dir,
-                filename = parsedPath.base,
-                extension = parsedPath.ext,
-                name = parsedPath.name
-        )
+        // TODO: implmement
+        return Path()
     }
 
     /**
-     * Get a Node compatible string a path
+     * Get a node compatible string a path
      */
     override fun toString(): String {
-        return this.value
+        // TODO: implmement
     }
 
     /**
