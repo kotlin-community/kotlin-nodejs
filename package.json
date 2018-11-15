@@ -1,0 +1,11 @@
+{
+  "name": "kotlin-nodejs",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": "git@github.com:kotlin-community/kotlin-nodejs.git",
+  "license": "MIT",
+  "dependencies": {
+    "kotlin": "^1.3.10",
+    "kotlinx-coroutines-core": "^1.0.1"
+  }
+}
