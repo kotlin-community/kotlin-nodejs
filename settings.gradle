@@ -4,3 +4,6 @@ include ':nodejs-path'
 include ':packages'
 include ':packages:fs'
 include ':packages:path'
+
+include ':kotlin-ava'
+project(':kotlin-ava').projectDir = new File(rootProject.projectDir, './node_modules/kotlin-ava')

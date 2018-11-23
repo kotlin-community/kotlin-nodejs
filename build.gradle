@@ -24,11 +24,21 @@ subprojects {
 
         dependencies {
             implementation "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
+            testCompile project(":kotlin-ava")
         }
 
         compileKotlin2Js {
             kotlinOptions {
                 outputFile = "${projectDir}/build/nodejs-${projectName}.js"
+                moduleKind = "commonjs"
+                sourceMap = true
+                sourceMapEmbedSources = "always"
+            }
+        }
+
+        compileTestKotlin2Js {
+            kotlinOptions {
+                outputFile = "${projectDir}/build/nodejs-${projectName}-test.js"
                 moduleKind = "commonjs"
                 sourceMap = true
                 sourceMapEmbedSources = "always"

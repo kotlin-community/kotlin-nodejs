@@ -7,5 +7,28 @@
   "dependencies": {
     "kotlin": "^1.3.10",
     "kotlinx-coroutines-core": "^1.0.1"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "kotlin-ava": "https://github.com/kotlin-community/kotlin-ava.git",
+    "kotlin-test": "^1.3.10"
+  },
+  "ava": {
+    "require": [
+      "kotlin-ava/bootstrap"
+    ],
+    "babel": {
+      "plugins": [
+        [
+          "module-resolver",
+          {
+            "alias": {
+              "^nodejs-path$": "./packages/path/build/nodejs-path.js"
+            }
+          }
+        ]
+      ]
+    }
   }
 }
